@@ -11,7 +11,7 @@
 >
 This is my journey through the VP 'course' series at https://samsclass.info/124/VP2020.htm
 
-Each 'module' is placed in a folder. For example VP100-Strings.
+Each 'module' is placed in a folder. 
 
 
 
