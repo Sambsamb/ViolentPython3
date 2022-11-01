@@ -29,14 +29,14 @@ for i in range(5):
 
     # Get the numbers out of string
     operation = reply.split()[0]
-    num2 = int(reply.split()[-2])
     num1 = int(reply.split()[-3])
+    num2 = int(reply.split()[-2])
     print(f"The operation is: '{operation}'")
     print(f"The numbers are:  '{num1}', '{num2}'")
     if operation == 'Add':
         response = num1 + num2
     elif operation == 'Subtract':
-        response = num1-num2
+        response = num1 - num2
     else:
         print(f"Unknown operation '{operation}'")
 
@@ -47,6 +47,6 @@ for i in range(5):
     print(s.recv(1024).decode())
 
 # send final response and get flag
-s.send((str(response)+'\n').encode())
+s.send('Gimme da flag :)\n'.encode())
 print(s.recv(1024).decode())
 s.close()
