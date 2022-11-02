@@ -47,11 +47,11 @@ open('VP110-3b', 'wb').write(response.content)
 if exists('VP110-3a'):
     file_size = os.path.getsize('VP110-3a')
     print(f"File 'VP110-3a' downloaded, size {file_size} bytes")
-    # File 'VP110-3a' downloaded, size 24 bytes
+    # File 'VP110-3a' downloaded, size 38094 bytes
 if exists('VP110-3b'):
     file_size = os.path.getsize('VP110-3b')
     print(f"File 'VP110-3b' downloaded, size {file_size} bytes")
-    # File 'VP110-3b' downloaded, size 24 bytes
+    # File 'VP110-3b' downloaded, size 38094 bytes
 
 # Adding the bytes in the two files together to construct a new file named VP110-3-flag.png
 with open('VP110-3a', 'rb') as f:
@@ -67,6 +67,7 @@ with open('VP110-3a', 'rb') as f:
 if exists('VP110-3-flag.png'):
     file_size = os.path.getsize('VP110-3-flag.png')
     print(f"File 'VP110-3-flag.png' validated, size {file_size} bytes")
+    # File 'VP110-3-flag.png' validated, size 38094 bytes
     # s0_1337
 
 f.close()
