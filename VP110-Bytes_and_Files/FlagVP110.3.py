@@ -54,7 +54,6 @@ if exists('VP110-3b'):
     # File 'VP110-3b' downloaded, size 24 bytes
 
 # Adding the bytes in the two files together to construct a new file named VP110-3-flag.png
-my_flag = ''
 with open('VP110-3a', 'rb') as f:
     with open('VP110-3b', 'rb') as g:
         with open('VP110-3-flag.png', 'wb') as h:
