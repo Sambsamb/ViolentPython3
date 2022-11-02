@@ -29,6 +29,9 @@ for port in range(1000, 65001, 1000):
         s.close()
     except socket.error as err:
         print(f"No response on port {port} - {err}")
-
+# No response on port 1000 - timed out
+# No response on port 2000 - timed out
+# Testing port 3000
+# Found flag ==>'Congratulations!  You found the hidden service on port 3000!'
 
 
