@@ -61,7 +61,7 @@ with open('VP110-2a', 'rb') as f:
             byte1 = f.read(1)
             byte2 = g.read(1)
             combined = byte1[0] + byte2[0]
-            my_flag = my_flag + bytes([combined]).decode()
+            my_flag += bytes([combined]).decode()
 
 print(my_flag)  # The flag is ADDING_BYTES
 
