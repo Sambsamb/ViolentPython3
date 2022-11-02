@@ -56,3 +56,4 @@ with open('VP110-1', 'rb') as f:
             counter += 1
 
 print(f"The number of x08 bytes is {counter}")  # 32
+f.close()

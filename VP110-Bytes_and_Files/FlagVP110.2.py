@@ -65,3 +65,5 @@ with open('VP110-2a', 'rb') as f:
 
 print(my_flag)  # The flag is ADDING_BYTES
 
+f.close()
+g.close()
