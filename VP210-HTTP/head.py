@@ -17,6 +17,7 @@ port = 80
 s = socket.socket()
 s.settimeout(2)
 s.connect((target, port))
+# The HEAD method grabs only the banner, without getting any pages from the server.
 req = 'HEAD / HTTP/1.1\r\nHost: ' + target + '\r\n\r\n'
 s.send(req.encode())
 print(s.recv(1024).decode())
