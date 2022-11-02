@@ -19,6 +19,10 @@ import socket
 # Input
 target = 'target1.bowneconsulting.com'
 port = 80
+url = '/php/login2.php'
+username = 'dumbo'
+password = 'dumbo'
+agent = 'python'
 
 # Process, output
 s = socket.socket()
@@ -26,19 +30,20 @@ s.settimeout(2)
 s.connect((target, port))
 
 # Build request based on requirements above
-req = '''GET /php/login2.php?u=dumbo&p=dumbo HTTP/1.1\r
-Host: target1.bowneconsulting.com\r
+req = f"""GET {url}?u={username}&p={password} HTTP/1.1\r
+Host: {target}\r
 Connection: keep-alive\r
 Upgrade-Insecure-Requests: 1\r
 DNT: 1\r
-User-Agent: python\r
+User-Agent: {agent}\r
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r
-Referer: http://target1.bowneconsulting.com/php/login2.php\r
+Referer: http://{target}{url}\r
 Accept-Language: en-US,en;q=0.9\r
 \r
-'''
+"""
 s.send(req.encode())
-print(s.recv(1024).decode())
+reply = s.recv(1024).decode()
+print(reply)
 s.close()
 
 # HTTP/1.1 200 OK
