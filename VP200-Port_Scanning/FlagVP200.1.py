@@ -28,7 +28,7 @@ for port in range(1000, 65001, 1000):
             break
         s.close()
     except socket.error as err:
-        print(f"No reponse on port {port} - {err}")
+        print(f"No response on port {port} - {err}")
 
 
 
