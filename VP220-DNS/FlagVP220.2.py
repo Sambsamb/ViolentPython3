@@ -3,7 +3,7 @@ INF601 - Advanced Programming in Python
 Sam Boutros
 Prof. Zeller
 FHSU - Fall 2022
-11/2/2022
+11/3/2022
 https://samsclass.info/124/proj14/VP220.htm
 """
 
@@ -12,24 +12,17 @@ https://samsclass.info/124/proj14/VP220.htm
 # Monitor the DNS requests. After a while you'll find the flag.
 
 from scapy.all import *
+import sys
 
 def findDNS(p):
     if p.haslayer(DNS):
-        # Avoid "IndexError: Layer [IP] not found"
-        try:
-            msg = (p[IP].src, p[DNS].summary())
-        except:
-            msg = print(p[DNS].summary())
-        if not isinstance(msg, type(None)):
+        msg = p[DNS].summary()
+        if 'flag' in msg:
             print(msg)
-            print(type(msg))  # Only prints when <msg = (p[IP].src, p[DNS].summary())> is invoked as in:
-            # ('10.0.0.176', 'DNS Qry "b\'_CC32E753._sub._googlecast._tcp.local.\'" ')
-            # <class 'tuple'>
-            if 'flag' in str(msg):
-                raise Exception(msg)  # Won't exit!?
-        if 'flag' in str(msg):
-            raise Exception(msg)  # Won't exit!?
+            sys.exit()
 
+
+print("Listening on DNS traffic for 'flag'")
 sniff(prn=findDNS)
 
 # DNS Qry "b'dk1ngonqdm-flag-is-poorlyhidden-ak0kjpzezzsdzmjrh2.samsclass.info.'"

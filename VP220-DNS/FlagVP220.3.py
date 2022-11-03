@@ -8,8 +8,8 @@ https://samsclass.info/124/proj14/VP220.htm
 """
 
 # In a Web browser, open this page:
-# https://samsclass.info/124/proj14/VP220-1.php
-# Monitor the DNS requests. After a while you'll find the flag
+# https://samsclass.info/124/proj14/VP220-3.php
+# Monitor the DNS requests. Some of the requests are different from the others, and they contain the flag
 
 from scapy.all import *
 import sys
@@ -25,4 +25,4 @@ def findDNS(p):
 print("Listening on DNS traffic for 'flag'")
 sniff(prn=findDNS)
 
-# DNS Qry "b'the-flag-is-dnsconfusion.samsclass.info.'"
+# DNS Qry "b'ruska9s7w2xflagxisxalsohiddenxqq88rqfnzbc1jrmgeprr5qyon.samsclass.info.'"
