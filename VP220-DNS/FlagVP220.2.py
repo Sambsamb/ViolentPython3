@@ -8,8 +8,8 @@ https://samsclass.info/124/proj14/VP220.htm
 """
 
 # In a Web browser, open this page:
-# https://samsclass.info/124/proj14/VP220-1.php
-# Monitor the DNS requests. After a while you'll find the flag
+# https://samsclass.info/124/proj14/VP220-2.php
+# Monitor the DNS requests. After a while you'll find the flag.
 
 from scapy.all import *
 
@@ -22,7 +22,9 @@ def findDNS(p):
             msg = print(p[DNS].summary())
         if not isinstance(msg, type(None)):
             print(msg)
-            print(type(msg))  # Won't print!?
+            print(type(msg))  # Only prints when <msg = (p[IP].src, p[DNS].summary())> is invoked as in:
+            # ('10.0.0.176', 'DNS Qry "b\'_CC32E753._sub._googlecast._tcp.local.\'" ')
+            # <class 'tuple'>
             if 'flag' in str(msg):
                 raise Exception(msg)  # Won't exit!?
         if 'flag' in str(msg):
@@ -30,4 +32,4 @@ def findDNS(p):
 
 sniff(prn=findDNS)
 
-# DNS Qry "b'the-flag-is-dnsconfusion.samsclass.info.'"
+# DNS Qry "b'dk1ngonqdm-flag-is-poorlyhidden-ak0kjpzezzsdzmjrh2.samsclass.info.'"
