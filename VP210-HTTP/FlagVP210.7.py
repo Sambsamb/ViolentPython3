@@ -6,7 +6,6 @@ FHSU - Fall 2022
 11/2/2022
 https://samsclass.info/124/proj14/VP210.htm
 """
-import sys
 
 # Make a Python script that logs in to this page:
 # https://bowneconsultingcontent.com/A2.5/index.php
@@ -16,6 +15,7 @@ import sys
 # User-Agent: python
 
 import requests
+import sys
 
 # Input
 url = 'https://bowneconsultingcontent.com/A2.5/index.php'
