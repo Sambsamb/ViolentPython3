@@ -7,7 +7,6 @@ FHSU - Fall 2022
 https://samsclass.info/124/proj14/VP210.htm
 """
 
-# Flag VP 210.6: HTTPS Basic Brute (10 pts)
 # Make a Python script that logs in to this page:
 # https://bowneconsultingcontent.com/BASIC/index.php
 # with these parameters:
