@@ -81,22 +81,9 @@ server_list = [
     'cedfhzgyls5r7yfxdesreverxsixgalfx5r7yfotwkguzx6rk',
     'cedfhzgyls5r7yfxdesreverxsixgalfx5r7yfotwkguzx6rk'
 ]
-len(server_list)  # 46
-
-
-def unique(list1):
-    unique_list = []
-    for x in list1:
-        if x not in unique_list:
-            unique_list.append(x)
-    return unique_list
-
-
-userver_list = unique(server_list)
-len(userver_list)  # 22
 
 # Visual inspection shows that 'xdesreverxsixgalfx' is a common string in all these short server names, confirmation:
-for server in userver_list:
+for server in server_list:
     if 'xdesreverxsixgalfx' not in server:
         print('xdesreverxsixgalfx', 'not found in', server)
 
