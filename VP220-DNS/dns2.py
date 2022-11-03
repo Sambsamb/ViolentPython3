@@ -12,23 +12,31 @@ from scapy.all import *
 
 def findDNS(p):
     if p.haslayer(DNS):
-        print(p[IP].src, p[DNS].summary())
+        # Avoid "IndexError: Layer [IP] not found"
+        try:
+            print(p[IP].src, p[DNS].summary())
+        except:
+            print(p[DNS].summary())
 
 
 sniff(prn=findDNS)
 
 
-# Traceback (most recent call last):
-#   File "D:\BU\OneDrive - SmartWebApps\Documents\edu\FHSU\2022 Fall\INF 601G - Advanced Python\ViolentPython3\VP220-DNS\dns2.py", line 18, in <module>
-#     sniff(prn=findDNS)
-#   File "D:\BU\OneDrive - SmartWebApps\Documents\edu\FHSU\2022 Fall\INF 601G - Advanced Python\ViolentPython3\venv\lib\site-packages\scapy\sendrecv.py", line 1263, in sniff
-#     sniffer._run(*args, **kwargs)
-#   File "D:\BU\OneDrive - SmartWebApps\Documents\edu\FHSU\2022 Fall\INF 601G - Advanced Python\ViolentPython3\venv\lib\site-packages\scapy\sendrecv.py", line 1210, in _run
-#     session.on_packet_received(p)
-#   File "D:\BU\OneDrive - SmartWebApps\Documents\edu\FHSU\2022 Fall\INF 601G - Advanced Python\ViolentPython3\venv\lib\site-packages\scapy\sessions.py", line 108, in on_packet_received
-#     result = self.prn(pkt)
-#   File "D:\BU\OneDrive - SmartWebApps\Documents\edu\FHSU\2022 Fall\INF 601G - Advanced Python\ViolentPython3\VP220-DNS\dns2.py", line 15, in findDNS
-#     print(p[IP].src, p[DNS].summary())
-#   File "D:\BU\OneDrive - SmartWebApps\Documents\edu\FHSU\2022 Fall\INF 601G - Advanced Python\ViolentPython3\venv\lib\site-packages\scapy\packet.py", line 1344, in __getitem__
-#     raise IndexError("Layer [%s] not found" % name)
-# IndexError: Layer [IP] not found
+# DNS Qry "b'server463.samsclass.info.'"
+# DNS Qry "b'server463.samsclass.info.'"
+# DNS Ans
+# DNS Ans
+# DNS Qry "b'server710.samsclass.info.'"
+# DNS Qry "b'server710.samsclass.info.'"
+# DNS Ans
+# DNS Ans
+# DNS Qry "b'array809.prod.do.dsp.mp.microsoft.com.'"
+# DNS Ans
+# DNS Qry "b'server401.samsclass.info.'"
+# DNS Qry "b'server401.samsclass.info.'"
+# DNS Ans
+# DNS Ans
+# 100.100.100.100 DNS Ans "[b'rpBA=00:00:00:00:00:00', b'rpVr=360.4', b'rpAD=b7f8161752eb']"
+# DNS Ans "[b'rpBA=00:00:00:00:00:00', b'rpVr=360.4', b'rpAD=b7f8161752eb']"
+# DNS Qry "b'server969.samsclass.info.'"
+# DNS Qry "b'server969.samsclass.info.'"
