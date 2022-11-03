@@ -30,3 +30,6 @@ for password in range(99, -1, -1):
         print(f"The '{username}' password is '{pwd}'")
         print(r.text)
         break
+
+# The 'admin' password is '91'
+#  The flag is basic-auth
