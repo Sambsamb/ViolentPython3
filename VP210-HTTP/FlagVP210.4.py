@@ -43,7 +43,7 @@ Host: {host}\r
     s.send(req.encode())
     reply = s.recv(1024).decode()
     if 'Unauthorized' not in reply:
-        print(f"  Admin password is '{pwd}'")
+        print(f"{username} password is '{pwd}'")
         print(reply)
         break
     s.close()
