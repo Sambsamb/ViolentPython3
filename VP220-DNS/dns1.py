@@ -22,7 +22,7 @@ sniff(prn=findDNS)
 # Ether / IPv6 / UDP / DNS Qry "b'server356.samsclass.info.'"
 # ###[ Ethernet ]###
 #   dst       = fc:51:a4:00:c4:0d
-#   src       = 30:65:ec:8d:37:d4
+#   src       = 00:00:00:00:00:00
 #   type      = IPv6
 # ###[ IPv6 ]###
 #      version   = 6
@@ -31,7 +31,7 @@ sniff(prn=findDNS)
 #      plen      = 50
 #      nh        = UDP
 #      hlim      = 64
-#      src       = 2601:82:4380:63a0:f010:7cc5:916f:e7e8
+#      src       = 0000:00:0000:0000:0000:0000:0000:0000
 #      dst       = 2001:558:feed::1
 # ###[ UDP ]###
 #         sport     = 49306
